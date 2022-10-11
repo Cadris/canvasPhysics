@@ -1,7 +1,6 @@
 window.addEventListener('load', function(){
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d'); 
-    const image1 = document.getElementById('image1');
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -29,14 +28,24 @@ window.addEventListener('load', function(){
             this.width = width;
             this.height = height;
             this.particleArray = [];
+            this.image = document.getElementById('image1');
+
+            this.centerX = this.width * 0.5;
+            this.centerY = this.height * 0.5;
+
+            this.x = this.centerX - this.image.width * 0.5;
+            this.y = this.centerY - this.image.height * 0.5;
         }
         
         init(){
-            this.particleArray.push(new Particle(this));
+            for (let i = 0; i < 10; i++) {
+                this.particleArray.push(new Particle(this));
+            }
         }
 
         draw(context){
             this.particleArray.forEach(particle => particle.draw(context));
+            context.drawImage(this.image, this.x, this.y);
         }
     }
 
