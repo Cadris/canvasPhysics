@@ -16,16 +16,19 @@ window.addEventListener('load', function(){
             this.size = Math.random() * 10;
 
             // velocity x,y
-            this.vx = 1;
-            this.vy = 1;
+            this.vx = Math.random() * 2 - 1 ;
+            this.vy = Math.random() * 2 - 1 ;
         }
         draw(context){
             context.fillRect(this.x ,this.y, this.size, this.size);
         }
         update(){
+            // this.x += (Math.pow(-1,getRandomInt(0,10)) * this.vx);
+            // this.y += (Math.pow(-1,getRandomInt(0,10)) *  this.vy); 
             this.x += this.vx;
             this.y += this.vy; 
         }
+        
     }
 
     /**
@@ -68,6 +71,7 @@ window.addEventListener('load', function(){
      * Animation loop
      */
     function animate(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         effect.draw(ctx);
         effect.update();
         window.requestAnimationFrame(animate);
