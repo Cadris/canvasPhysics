@@ -1,0 +1,19 @@
+{
+  "name": "canvasphysics",
+  "version": "1.0.0",
+  "description": "HTML Canvas with particle system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cadris/canvasPhysics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cadris/canvasPhysics/issues"
+  },
+  "homepage": "https://github.com/Cadris/canvasPhysics#readme"
+}
